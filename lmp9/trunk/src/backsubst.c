@@ -13,8 +13,7 @@ int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
 
         if( (mat->c != n) || (x->r != n) || (x->c != 1) ||
                         (b->r != n) || (b->c != 1) ) {
-                fprintf( stderr, "Błędny rozmiar macierzy
-                                w podstawieniu wstecznym\n" );
+                fprintf( stderr, "Błędny rozmiar macierzy w podstawieniu wstecznym\n" );
                 return 2;
         }
 
@@ -25,8 +24,7 @@ int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
                         suma += mat->data[i][j] * x->data[j][0];
                 if( mat->data[i][i] == 0.0 ) {
                 /* dzielenie przez 0 */
-                        fprintf( stderr, "Błąd w podstawieniu wstecznym:
-                                        próba dzielenie przez 0\n" );
+                        fprintf( stderr, "Błąd w podstawieniu wstecznym: próba dzielenie przez 0\n" );
                         return 1;
                 }
                 x->data[i][0] = ( b->data[i][0] - suma ) / mat->data[i][i];
